@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +9,26 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="row">
+           <div class="col-12">
+
+                <!-- Milestone 1
+                Creare un form che invii in GET la lunghezza della password. Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli) da restituire all’utente. -->
+                <form action="./index.php" method="GET" class="my-5">
+                    <div class="row">
+                        <div class="col-12">
+
+                            
+                            <input type="number" name="password-lenght" placeholder="Password lenght" class="form-control">
+                        </div>
+                        <div class="col-12 my-3">
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </div>
+                    </div>
+                </form>
+           </div>
+        </div>
+    </div>
 </body>
 </html>
