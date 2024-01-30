@@ -1,24 +1,11 @@
 <?php
+    // Milestone 2
+    // Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file *functions.php* che includeremo poi nella pagina principale
+    include './function.php';
+
+
     // Milestone 1
     // Creare un form che invii in GET la lunghezza della password. Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli) da restituire all’utente.
-
-    function generate_password($password_length){
-        $password = '';
-        $characters = 'abcdefghijklmnopqrstuvwxyz'.strtoupper('abcdefghijklmnopqrstuvwxyz').'0123456789!£$%&/()=?[]@#{}';
-
-        $characters_length = strlen($characters);
-
-        while(strlen($password) < $password_length){
-            $index = rand(0, $characters_length - 1);
-
-            $char = $characters[$index];
-
-            $password = $password.$char;
-        }
-
-        return $password;
-    }
-
     if(isset($_GET['password-length']) && $_GET['password-length'] != ''){
         $password_length = $_GET['password-length'];
 
@@ -40,10 +27,12 @@
     <div class="container">
         <div class="row">
            <div class="col-12">
-                <h2>
+                <?php
+                    if (isset($password)) {
+                        echo '<h2>La password è: ' . $password . '</h2>';
+                    }
+                ?>
 
-                    <?php echo $password ?>
-                </h2>
 
                 <!-- Milestone 1
                 Creare un form che invii in GET la lunghezza della password. Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli) da restituire all’utente. -->
